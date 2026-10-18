@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Route {
+  id              String      @id @default(cuid())
+  busNumber       String
+  routeName       String?
+  startingPointId String
+  destinationId   String
+  description     String?
+  isActive        Boolean     @default(true)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  startingPoint   Stop        @relation("RouteStartingPoint", fields: [startingPointId], references: [id], onDelete: Restrict)
+  destination     Stop        @relation("RouteDestination", fields: [destinationId], references: [id], onDelete: Restrict)
+  routeStops      RouteStop[]
+  feedbacks       Feedback[]
+
+  @@index([busNumber])
+  @@index([startingPointId])
+  @@index([destinationId])
+}
+
+model Stop {
+  id             String      @id @default(cuid())
+  name           String
+  normalizedName String
+  description    String?
+  isActive       Boolean     @default(true)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  startingRoutes    Route[]     @relation("RouteStartingPoint")
+  destinationRoutes Route[]     @relation("RouteDestination")
+  routeStops        RouteStop[]
+  aliases           StopAlias[]
+  feedbacks         Feedback[]
+
+  @@index([normalizedName])
+}
+
+model RouteStop {
+  id        String   @id @default(cuid())
+  routeId   String
+  stopId    String
+  stopOrder Int
+  createdAt DateTime @default(now())
+
+  route     Route    @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  stop      Stop     @relation(fields: [stopId], references: [id], onDelete: Restrict)
+
+  @@unique([routeId, stopOrder])
+  @@index([routeId])
+  @@index([stopId])
+}
+
+model StopAlias {
+  id              String   @id @default(cuid())
+  stopId          String
+  aliasName       String
+  normalizedAlias String
+  createdAt       DateTime @default(now())
+
+  stop            Stop     @relation(fields: [stopId], references: [id], onDelete: Cascade)
+
+  @@unique([stopId, normalizedAlias])
+  @@index([normalizedAlias])
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Feedback {
+  id                   String    @id @default(cuid())
+  routeId              String?
+  stopId               String?
+  feedbackType         String    // INCORRECT_ROUTE, MISSING_STOP, INCORRECT_STOP_NAME, INCORRECT_STOP_ORDER, INCORRECT_START_DEST, GENERAL_FEEDBACK, OTHER
+  description          String
+  suggestedStopName    String?
+  suggestedStartPoint  String?
+  suggestedDestination String?
+  status               String    @default("PENDING") // PENDING, APPROVED, REJECTED, DUPLICATE
+  reviewNote           String?
+  reviewedAt           DateTime?
+  createdAt            DateTime  @default(now())
+
+  route                Route?    @relation(fields: [routeId], references: [id], onDelete: SetNull)
+  stop                 Stop?     @relation(fields: [stopId], references: [id], onDelete: SetNull)
+
+  @@index([status])
+  @@index([routeId])
+  @@index([stopId])
+}
