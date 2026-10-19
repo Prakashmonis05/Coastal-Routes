@@ -4,9 +4,19 @@ import Link from "next/link";
 import { Bus, ShieldCheck, HeartHandshake, MapPin, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "About - Coastal Routes City Bus Route Finder",
+  title: "About Mangalore City & Private Bus Routes Transit | Coastal Routes",
   description:
-    "Learn about Coastal Routes, our mission to improve urban bus route discoverability, and how our community verified transit schedule works.",
+    "Learn about Coastal Routes: Mangalore's dedicated private bus and city transit route mapping initiative for daily commuters and travelers across Dakshina Kannada.",
+  keywords: [
+    "about mangalore bus routes",
+    "mangalore private buses",
+    "mangaluru city bus network",
+    "coastal routes mangalore",
+    "state bank bus stand mangalore",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
@@ -21,14 +31,14 @@ export default function AboutPage() {
               About Coastal Routes
             </div>
             <h1 className="text-3xl sm:text-4xl font-black text-gray-950 tracking-tight">
-              Making City Bus Routes Accessible &amp; Transparent
+              Making Mangalore Bus Routes &amp; Private Buses Accessible
             </h1>
             <p className="text-base text-gray-800 font-medium mt-4 leading-relaxed">
-              <strong>Coastal Routes</strong> is designed to solve a fundamental
-              commuter challenge: knowing which bus to catch, where it stops, and
-              whether it stops where you need to go. In rapidly growing urban and
-              coastal areas, bus route changes and new stops often go
-              undocumented.
+              <strong>Coastal Routes</strong> is a dedicated public transit initiative built to solve a fundamental
+              commuter challenge in Mangaluru (Mangalore): knowing which bus to catch, where it stops, and
+              whether it stops where you need to go. Mangalore is famous across coastal Karnataka for its
+              dynamic, high-frequency <strong>private bus network</strong> operating from State Bank, Kankanady,
+              Surathkal, and beyond.
             </p>
           </div>
 
@@ -41,7 +51,7 @@ export default function AboutPage() {
                 Sequential Stop Order
               </h3>
               <p className="text-xs text-gray-800 font-medium leading-relaxed">
-                Every route clearly shows stops from starting terminal to final
+                Every Mangalore route clearly shows stops from starting terminal to final
                 destination so commuters never travel in the wrong direction.
               </p>
             </div>
@@ -54,8 +64,8 @@ export default function AboutPage() {
                 Alias &amp; Fuzzy Search
               </h3>
               <p className="text-xs text-gray-800 font-medium leading-relaxed">
-                Whether you search &quot;CBS&quot;, &quot;Station&quot;, or have a slight spelling
-                typo, our search handles aliases and similarity matching.
+                Whether you search &quot;State Bank&quot;, &quot;SB&quot;, &quot;Suratkal&quot;, or have a spelling
+                typo, our Mangalore transit search handles local aliases and similarity matching.
               </p>
             </div>
 
@@ -67,7 +77,7 @@ export default function AboutPage() {
                 Verified Moderation
               </h3>
               <p className="text-xs text-gray-800 font-medium leading-relaxed">
-                Public feedback and missing-stop suggestions are carefully
+                Public feedback, timetable corrections, and missing-stop suggestions are carefully
                 reviewed by administrators before changes go live.
               </p>
             </div>
@@ -75,11 +85,11 @@ export default function AboutPage() {
 
           <div className="pt-6 border-t border-gray-200 space-y-4 text-sm text-gray-800 font-medium leading-relaxed">
             <h2 className="text-xl font-extrabold text-gray-950">
-              Community-Driven Quality
+              Community-Driven Transit Quality in Dakshina Kannada
             </h2>
             <p>
               Transit routes are only as good as the information commuters have.
-              If a bus stop name has changed, a stop has been moved due to road
+              If a bus stop name has changed, a stop has been moved due to smart city road
               construction, or a new bus route is introduced, anyone can report
               it directly from any route page or our dedicated feedback section.
             </p>

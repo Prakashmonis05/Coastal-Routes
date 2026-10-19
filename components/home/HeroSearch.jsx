@@ -88,7 +88,7 @@ export default function HeroSearch({ commonStops = [], popularRoutes = [] }) {
               <input
                 type="text"
                 required
-                placeholder="Enter Bus Number (e.g. 101, 15, 51, 2)..."
+                placeholder="Enter Mangalore Bus No. (e.g. 2, 2A, 15, 27, 51)..."
                 value={busNo}
                 onChange={(e) => setBusNo(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 sm:py-3.5 bg-white text-black placeholder:text-gray-600 font-extrabold text-base sm:text-lg focus:outline-hidden"
@@ -137,7 +137,7 @@ export default function HeroSearch({ commonStops = [], popularRoutes = [] }) {
                 <input
                   type="text"
                   required
-                  placeholder="Starting Stop / Origin..."
+                  placeholder="Starting Stop (e.g. State Bank, Kankanady)..."
                   value={fromStop}
                   onChange={(e) => setFromStop(e.target.value)}
                   className="w-full pl-10 pr-3 py-3 bg-white text-black placeholder:text-gray-600 font-bold border border-gray-300 focus:border-red-500 rounded-xl text-sm sm:text-base focus:ring-1 focus:ring-red-500 focus:outline-hidden transition"
@@ -162,7 +162,7 @@ export default function HeroSearch({ commonStops = [], popularRoutes = [] }) {
                 <input
                   type="text"
                   required
-                  placeholder="Destination Stop..."
+                  placeholder="Destination Stop (e.g. Surathkal, Konaje)..."
                   value={toStop}
                   onChange={(e) => setToStop(e.target.value)}
                   className="w-full pl-10 pr-3 py-3 bg-white text-black placeholder:text-gray-600 font-bold border border-gray-300 focus:border-red-500 rounded-xl text-sm sm:text-base focus:ring-1 focus:ring-red-500 focus:outline-hidden transition"

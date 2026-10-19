@@ -4,9 +4,17 @@ import Footer from "@/components/layout/Footer";
 import SuggestStopForm from "@/components/feedback/SuggestStopForm";
 
 export const metadata = {
-  title: "Suggest a Missing Bus Stop - Coastal Routes",
+  title: "Suggest a Missing Mangalore Bus Stop | Coastal Routes",
   description:
-    "Suggest a missing bus stop in the city bus transit network with landmark details.",
+    "Suggest a missing bus stop in the Mangalore city and private bus transit network with landmark details.",
+  keywords: [
+    "suggest mangalore bus stop",
+    "mangalore bus stops",
+    "mangalore private bus stop submission",
+  ],
+  alternates: {
+    canonical: "/suggest-stop",
+  },
 };
 
 export default async function SuggestStopPage({ searchParams }) {

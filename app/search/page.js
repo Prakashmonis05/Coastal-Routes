@@ -9,9 +9,20 @@ import {
 import { Search } from "lucide-react";
 
 export const metadata = {
-  title: "Search Bus Routes & Stops - Coastal Routes",
+  title: "Search Mangalore Bus Routes & Private Buses | Coastal Routes",
   description:
-    "Search for bus routes by bus number, start and destination stops, or stop name with fuzzy spelling suggestions.",
+    "Search Mangalore private bus routes by bus number, start and destination stops (e.g. State Bank to Surathkal), or bus stop names with typo tolerance.",
+  keywords: [
+    "search mangalore bus routes",
+    "mangalore private buses search",
+    "mangaluru city bus finder",
+    "state bank bus route search",
+    "mangalore bus timing search",
+    "mangalore private bus numbers",
+  ],
+  alternates: {
+    canonical: "/search",
+  },
 };
 
 export default async function SearchPage({ searchParams }) {
@@ -48,14 +59,13 @@ export default async function SearchPage({ searchParams }) {
         <div className="mb-8">
           <div className="flex items-center gap-2 text-red-600 font-bold text-xs uppercase tracking-wider mb-1">
             <Search className="w-4 h-4" />
-            Transit Search
+            Mangalore Transit Search
           </div>
           <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">
-            Find Your City Bus
+            Search Mangalore Bus Routes &amp; Private Buses
           </h1>
           <p className="text-sm font-medium text-gray-700 mt-1">
-            Look up routes by bus number, origin &amp; destination terminals, or
-            any intermediate stop.
+            Look up routes by Mangalore bus number (e.g. 2, 15, 27, 51), origin &amp; destination terminals (e.g. State Bank to Surathkal), or any intermediate stop.
           </p>
         </div>
 

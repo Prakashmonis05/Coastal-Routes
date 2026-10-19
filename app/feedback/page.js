@@ -5,9 +5,17 @@ import FeedbackForm from "@/components/feedback/FeedbackForm";
 import { MessageSquarePlus } from "lucide-react";
 
 export const metadata = {
-  title: "Suggest Changes & Feedback - Coastal Routes",
+  title: "Suggest Changes & Feedback for Mangalore Bus Routes | Coastal Routes",
   description:
-    "Suggest changes, report incorrect bus routes, wrong stop sequences, or propose route updates.",
+    "Report incorrect Mangalore private bus routes, missing intermediate stops, wrong stop order, or suggest updates to city bus schedules.",
+  keywords: [
+    "mangalore bus feedback",
+    "mangalore bus route correction",
+    "mangalore private bus suggestions",
+  ],
+  alternates: {
+    canonical: "/feedback",
+  },
 };
 
 export default async function FeedbackPage() {

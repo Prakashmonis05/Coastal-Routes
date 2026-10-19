@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
@@ -17,17 +17,66 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed max-w-md">
-              A community-driven city bus route finder. Our goal is to make
-              urban and coastal public transit accessible, transparent, and easy
-              for daily commuters and visitors alike.
+              The premier Mangalore bus routes and Mangalore private buses route finder.
+              Making coastal public transit transparent, predictable, and easy
+              for daily commuters and visitors across Dakshina Kannada.
             </p>
             <div className="flex items-center gap-2 text-xs text-gray-500 bg-white border border-gray-200 rounded-md p-3 max-w-md">
               <HeartHandshake className="w-4 h-4 text-red-600 shrink-0" />
               <span>
-                Noticed a missing stop or altered route? Use our feedback form to
-                help keep transit data accurate for everyone.
+                Noticed a missing stop or altered Mangalore private bus route? Use our feedback form to
+                help keep transit schedules accurate for everyone.
               </span>
             </div>
+          </div>
+
+          {/* Popular Corridors */}
+          <div>
+            <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              Mangalore Routes
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/search?from=State+Bank&to=Surathkal&mode=point-to-point"
+                  className="text-gray-600 hover:text-red-600 transition"
+                >
+                  State Bank ⇄ Surathkal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/search?from=State+Bank&to=Mangalore+University&mode=point-to-point"
+                  className="text-gray-600 hover:text-red-600 transition"
+                >
+                  State Bank ⇄ Konaje (MU)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/search?from=State+Bank&to=Kankanady&mode=point-to-point"
+                  className="text-gray-600 hover:text-red-600 transition"
+                >
+                  State Bank ⇄ Kankanady
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/search?from=State+Bank&to=Panambur&mode=point-to-point"
+                  className="text-gray-600 hover:text-red-600 transition"
+                >
+                  State Bank ⇄ Panambur
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/search?from=State+Bank&to=Bajpe+Aerodrome&mode=point-to-point"
+                  className="text-gray-600 hover:text-red-600 transition"
+                >
+                  State Bank ⇄ Bajpe Airport
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Quick Links */}
@@ -49,7 +98,7 @@ export default function Footer() {
                   href="/search"
                   className="text-gray-600 hover:text-red-600 transition"
                 >
-                  Find Bus
+                  Search Buses
                 </Link>
               </li>
               <li>
@@ -57,7 +106,7 @@ export default function Footer() {
                   href="/routes"
                   className="text-gray-600 hover:text-red-600 transition"
                 >
-                  Browse All Routes
+                  All Mangalore Routes
                 </Link>
               </li>
               <li>
@@ -73,7 +122,7 @@ export default function Footer() {
                   href="/about"
                   className="text-gray-600 hover:text-red-600 transition"
                 >
-                  About This Project
+                  About Mangalore Transit
                 </Link>
               </li>
             </ul>
@@ -82,7 +131,7 @@ export default function Footer() {
           {/* Help & Feedback */}
           <div>
             <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-4">
-              Community & Feedback
+              Feedback & Staff
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -90,7 +139,7 @@ export default function Footer() {
                   href="/feedback"
                   className="text-gray-600 hover:text-red-600 transition"
                 >
-                  Suggest Changes
+                  Suggest Route Changes
                 </Link>
               </li>
               <li>
@@ -115,9 +164,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>© 2026 Coastal Routes - City Bus Route Finder. All rights reserved.</p>
+          <p>© 2026 Coastal Routes - Mangalore Bus Routes &amp; Private Buses Guide. All rights reserved.</p>
           <p className="text-gray-400">
-            Local development build • Running with PostgreSQL & Next.js
+            Namma Kudla Transit • Mangaluru, Karnataka
           </p>
         </div>
       </div>

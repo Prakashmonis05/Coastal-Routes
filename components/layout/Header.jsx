@@ -31,7 +31,7 @@ export default function Header() {
                 Coastal Routes
               </span>
               <span className="block text-xs font-medium text-gray-500">
-                City Bus Route Finder
+                Mangalore Bus &amp; Transit Guide
               </span>
             </div>
           </Link>
