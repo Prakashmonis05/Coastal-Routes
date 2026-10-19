@@ -11,6 +11,7 @@ import {
   Navigation,
   MapPin,
 } from "lucide-react";
+import PlaceAutocomplete from "@/components/search/PlaceAutocomplete";
 
 export default function HeroSearch({ commonStops = [], popularRoutes = [] }) {
   const router = useRouter();
@@ -131,16 +132,17 @@ export default function HeroSearch({ commonStops = [], popularRoutes = [] }) {
             className="bg-white p-3 sm:p-4 rounded-2xl shadow-lg border border-gray-200 space-y-3"
           >
             <div className="grid grid-cols-1 sm:grid-cols-11 gap-2 items-center">
-              {/* Origin Stop Input */}
+              {/* Origin Stop Input with Autocomplete Suggestions */}
               <div className="sm:col-span-5 relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-red-600 bg-white" />
-                <input
-                  type="text"
+                <PlaceAutocomplete
+                  value={fromStop}
+                  onChange={setFromStop}
                   required
                   placeholder="Starting Stop (e.g. State Bank, Kankanady)..."
-                  value={fromStop}
-                  onChange={(e) => setFromStop(e.target.value)}
-                  className="w-full pl-10 pr-3 py-3 bg-white text-black placeholder:text-gray-600 font-bold border border-gray-300 focus:border-red-500 rounded-xl text-sm sm:text-base focus:ring-1 focus:ring-red-500 focus:outline-hidden transition"
+                  icon={
+                    <div className="w-3.5 h-3.5 rounded-full border-2 border-red-600 bg-white" />
+                  }
+                  inputClassName="w-full pl-10 pr-9 py-3 bg-white text-black placeholder:text-gray-600 font-bold border border-gray-300 focus:border-red-500 rounded-xl text-sm sm:text-base focus:ring-1 focus:ring-red-500 focus:outline-hidden transition"
                 />
               </div>
 
@@ -156,16 +158,17 @@ export default function HeroSearch({ commonStops = [], popularRoutes = [] }) {
                 </button>
               </div>
 
-              {/* Destination Stop Input */}
+              {/* Destination Stop Input with Autocomplete Suggestions */}
               <div className="sm:col-span-5 relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-red-600" />
-                <input
-                  type="text"
+                <PlaceAutocomplete
+                  value={toStop}
+                  onChange={setToStop}
                   required
                   placeholder="Destination Stop (e.g. Surathkal, Konaje)..."
-                  value={toStop}
-                  onChange={(e) => setToStop(e.target.value)}
-                  className="w-full pl-10 pr-3 py-3 bg-white text-black placeholder:text-gray-600 font-bold border border-gray-300 focus:border-red-500 rounded-xl text-sm sm:text-base focus:ring-1 focus:ring-red-500 focus:outline-hidden transition"
+                  icon={
+                    <div className="w-3.5 h-3.5 rounded-full bg-red-600" />
+                  }
+                  inputClassName="w-full pl-10 pr-9 py-3 bg-white text-black placeholder:text-gray-600 font-bold border border-gray-300 focus:border-red-500 rounded-xl text-sm sm:text-base focus:ring-1 focus:ring-red-500 focus:outline-hidden transition"
                 />
               </div>
             </div>

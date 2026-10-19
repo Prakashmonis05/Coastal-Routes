@@ -4,7 +4,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSearch from "@/components/home/HeroSearch";
 import RouteCard from "@/components/routes/RouteCard";
-import FaqSection, { FAQS } from "@/components/home/FaqSection";
+import FaqSection from "@/components/home/FaqSection";
+import { FAQS } from "@/lib/constants/faqs";
 import {
   Bus,
   Search,

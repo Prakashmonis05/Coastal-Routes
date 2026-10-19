@@ -13,6 +13,7 @@ import {
   PlusCircle,
   Sparkles,
 } from "lucide-react";
+import PlaceAutocomplete from "@/components/search/PlaceAutocomplete";
 
 export default function SearchClient({
   initialQuery = "",
@@ -92,18 +93,17 @@ export default function SearchClient({
         {mode === "general" && (
           <form onSubmit={handleGeneralSearch} className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex-1">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
-              <input
-                type="text"
-                placeholder="Enter bus number (e.g. 101, 15) or stop name (e.g. Market, Beach, CBS)..."
+              <PlaceAutocomplete
                 value={generalQuery}
-                onChange={(e) => setGeneralQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-white text-black font-bold placeholder:text-gray-600 border border-gray-300 rounded-xl text-base focus:ring-2 focus:ring-red-500 focus:outline-hidden"
+                onChange={setGeneralQuery}
+                placeholder="Enter bus number (e.g. 2, 15) or stop name (e.g. State Bank, Surathkal, Kankanady)..."
+                icon={<Search className="w-5 h-5 text-gray-500" />}
+                inputClassName="w-full pl-11 pr-9 py-3 bg-white text-black font-bold placeholder:text-gray-600 border border-gray-300 rounded-xl text-base focus:ring-2 focus:ring-red-500 focus:outline-hidden"
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl shadow-xs transition"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl shadow-xs transition shrink-0"
             >
               <Search className="w-5 h-5" />
               Search
@@ -116,14 +116,15 @@ export default function SearchClient({
           <form onSubmit={handlePointSearch} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
               <div className="sm:col-span-2 relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full border-2 border-red-600 bg-white" />
-                <input
-                  type="text"
-                  required
-                  placeholder="Starting Stop (e.g. Market, Station)..."
+                <PlaceAutocomplete
                   value={fromQuery}
-                  onChange={(e) => setFromQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-white text-black font-bold placeholder:text-gray-600 border border-gray-300 rounded-xl text-base focus:ring-2 focus:ring-red-500 focus:outline-hidden"
+                  onChange={setFromQuery}
+                  required
+                  placeholder="Starting Stop (e.g. State Bank, Kankanady)..."
+                  icon={
+                    <div className="w-3 h-3 rounded-full border-2 border-red-600 bg-white" />
+                  }
+                  inputClassName="w-full pl-10 pr-9 py-3 bg-white text-black font-bold placeholder:text-gray-600 border border-gray-300 rounded-xl text-base focus:ring-2 focus:ring-red-500 focus:outline-hidden"
                 />
               </div>
 
@@ -139,14 +140,15 @@ export default function SearchClient({
               </div>
 
               <div className="sm:col-span-2 relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-red-600" />
-                <input
-                  type="text"
-                  required
-                  placeholder="Destination Stop (e.g. Hospital, Beach)..."
+                <PlaceAutocomplete
                   value={toQuery}
-                  onChange={(e) => setToQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-white text-black font-bold placeholder:text-gray-600 border border-gray-300 rounded-xl text-base focus:ring-2 focus:ring-red-500 focus:outline-hidden"
+                  onChange={setToQuery}
+                  required
+                  placeholder="Destination Stop (e.g. Surathkal, Konaje)..."
+                  icon={
+                    <div className="w-3 h-3 rounded-full bg-red-600" />
+                  }
+                  inputClassName="w-full pl-10 pr-9 py-3 bg-white text-black font-bold placeholder:text-gray-600 border border-gray-300 rounded-xl text-base focus:ring-2 focus:ring-red-500 focus:outline-hidden"
                 />
               </div>
             </div>
