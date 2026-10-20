@@ -264,14 +264,14 @@ export default function SearchClient({
                 {busResults.map((r) => (
                   <div
                     key={r.id}
-                    className="bg-white border border-gray-200 rounded-xl p-5 shadow-xs flex flex-col justify-between"
+                    className="bg-white border border-gray-200 rounded-xl p-5 shadow-xs flex flex-col justify-between min-w-0"
                   >
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="px-3 py-1 bg-red-600 text-white font-extrabold text-sm rounded-lg">
+                      <div className="flex items-center justify-between gap-2 mb-2 min-w-0">
+                        <span className="px-3 py-1 bg-red-600 text-white font-extrabold text-sm rounded-lg shrink-0">
                           Bus {r.busNumber}
                         </span>
-                        <span className="text-xs text-gray-800 font-bold bg-gray-100 px-2 py-0.5 rounded-md">
+                        <span className="text-xs text-gray-800 font-bold bg-gray-100 px-2 py-0.5 rounded-md shrink-0 whitespace-nowrap ml-auto">
                           {r.stopCount} stops
                         </span>
                       </div>
